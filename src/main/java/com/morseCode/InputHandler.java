@@ -33,12 +33,25 @@ public class InputHandler {
             Map.entry("W", ".--"),
             Map.entry("X", "-..-"),
             Map.entry("Y", "-.--"),
-            Map.entry("Z", "--.."));
+            Map.entry("Z", "--.."),
+            Map.entry("1", ".----"),
+            Map.entry("2", "..---"),
+            Map.entry("3", "...--"),
+            Map.entry("4", "....-"),
+            Map.entry("5", "....."),
+            Map.entry("6", "-...."),
+            Map.entry("7", "--..."),
+            Map.entry("8", "---.."),
+            Map.entry("9", "----."),
+            Map.entry("0", "-----"),
+            Map.entry("&", ".-..."),
+            Map.entry(".", "..--.."),
+            Map.entry(",", "--..--"));
 
     void loopTroughInput() {
         AudioHandler audioHandler = new AudioHandler();
         String userInput = getUserInput();
-        Matcher matcher = Pattern.compile("([A-Z])").matcher(userInput);
+        Matcher matcher = Pattern.compile("([A-Z0-9,&])").matcher(userInput);
 
         while (matcher.find()) {
             getMatchingValue(matcher.group(1));
@@ -52,7 +65,6 @@ public class InputHandler {
     }
 
     private void getMatchingValue(String matchingCharacter) {
-        // TODO figure out a way to print a word normally and separate where there is space
         System.out.print(letterToMorseCode.get(matchingCharacter) + " ");
     }
 }
