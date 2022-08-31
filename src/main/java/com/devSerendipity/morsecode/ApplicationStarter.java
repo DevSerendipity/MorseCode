@@ -1,4 +1,4 @@
-package com.morseCode;
+package com.devSerendipity.morsecode;
 
 public class ApplicationStarter {
 

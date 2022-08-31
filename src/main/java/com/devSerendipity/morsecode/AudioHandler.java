@@ -1,4 +1,4 @@
-package com.morseCode;
+package com.devSerendipity.morsecode;
 
 import javax.sound.sampled.*;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.morseCode;
+package com.devSerendipity.morsecode;
 
 import java.util.Map;
 import java.util.Scanner;
