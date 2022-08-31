@@ -41,7 +41,7 @@ public enum MorseCode {
     NINE("----."),
     ZERO("-----"),
     AND(".-...");
-    private static final Map<String, String> letterToMorseCode = Map.ofEntries(Map.entry("1", "ONE"),
+    private static final Map<String, String> letterToMorseEnum = Map.ofEntries(Map.entry("1", "ONE"),
                                                                                Map.entry("2", "TWO"),
                                                                                Map.entry("3", "THREE"),
                                                                                Map.entry("4", "FOUR"),
@@ -61,8 +61,8 @@ public enum MorseCode {
     }
 
     public static MorseCode getEnum(String s) {
-        if ( letterToMorseCode.containsKey(s) ) {
-            return valueOf(letterToMorseCode.get(s));
+        if ( letterToMorseEnum.containsKey(s) ) {
+            return valueOf(letterToMorseEnum.get(s));
         }
         return valueOf(s);
     }

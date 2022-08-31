@@ -6,24 +6,20 @@ import java.util.regex.Pattern;
 
 public class MorseCodeCharacterHandler {
 
+    private final Scanner scanner = new Scanner(System.in);
+    private final String input = scanner.nextLine().toUpperCase().strip();
+
     public void start() {
         loopTroughInput();
     }
 
     void loopTroughInput() {
         AudioHandler audioHandler = new AudioHandler();
-        String userInput = getUserInput();
-        Matcher matcher = Pattern.compile("([A-Z\\d,&])").matcher(userInput);
-
+        Matcher matcher = Pattern.compile("([A-Z\\d,&])").matcher(input);
         while( matcher.find() ) {
-            System.out.println(MorseCode.getEnum(matcher.group(1)));
-            audioHandler.pathForAudio(matcher.group(1));
+            System.out.print(MorseCode.getEnum(matcher.group()).getMorseCode() + " ");
+            audioHandler.pathForAudio(matcher.group());
         }
-    }
-
-    private String getUserInput() {
-        Scanner input = new Scanner(System.in);
-        return input.nextLine().toUpperCase().strip();
     }
 
 }
