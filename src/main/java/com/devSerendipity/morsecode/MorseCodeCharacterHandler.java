@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MorseCodeHandler {
+public class MorseCodeCharacterHandler {
 
     public void start() {
         loopTroughInput();
@@ -13,10 +13,10 @@ public class MorseCodeHandler {
     void loopTroughInput() {
         AudioHandler audioHandler = new AudioHandler();
         String userInput = getUserInput();
-        Matcher matcher = Pattern.compile("([A-Z0-9,&])").matcher(userInput);
+        Matcher matcher = Pattern.compile("([A-Z\\d,&])").matcher(userInput);
 
         while( matcher.find() ) {
-            getMatchingValue(matcher.group(1));
+            System.out.println(MorseCode.getEnum(matcher.group(1)));
             audioHandler.pathForAudio(matcher.group(1));
         }
     }
@@ -26,7 +26,4 @@ public class MorseCodeHandler {
         return input.nextLine().toUpperCase().strip();
     }
 
-    private void getMatchingValue(String matchingCharacter) {
-        System.out.print(MorseCode.getEnum(matchingCharacter).getMorseCode() + " ");
-    }
 }

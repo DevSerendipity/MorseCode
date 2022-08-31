@@ -9,10 +9,10 @@ public class AudioHandler {
     void pathForAudio(String character) {
         String filePath = "src/main/resources/" + character + ".wav";
         audioSetUp(filePath);
-        breakBetweenLetters();
+        breakBetweenCharacters();
     }
 
-    private void breakBetweenLetters() {
+    private void breakBetweenCharacters() {
         try {
             Thread.sleep(1200);
         } catch ( InterruptedException e ) {
