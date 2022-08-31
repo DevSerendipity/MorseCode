@@ -15,7 +15,7 @@ public class AudioHandler {
     private void breakBetweenLetters() {
         try {
             Thread.sleep(1200);
-        } catch (InterruptedException e) {
+        } catch ( InterruptedException e ) {
             System.out.println(e.getMessage());
             System.out.println(e.getLocalizedMessage());
         }
@@ -27,7 +27,7 @@ public class AudioHandler {
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+        } catch ( UnsupportedAudioFileException | IOException | LineUnavailableException e ) {
             System.out.println(e.getMessage());
             System.out.println(e.getLocalizedMessage());
         }

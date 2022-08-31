@@ -4,13 +4,13 @@ import java.util.Map;
 
 public enum MorseCode {
 
-    A( ".-"),
-    B( "-..."),
-    C( "-.-."),
-    D( "-.."),
-    E( "."),
-    F( "..-."),
-    G( "--."),
+    A(".-"),
+    B("-..."),
+    C("-.-."),
+    D("-.."),
+    E("."),
+    F("..-."),
+    G("--."),
     H("...."),
     I(".."),
     J(".---"),
@@ -66,6 +66,7 @@ public enum MorseCode {
         }
         return valueOf(s);
     }
+
     public String getMorseCode() {
         return morseCode;
     }
